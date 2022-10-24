@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		//	numprocs);
 
 		for (int source_rank = 1; source_rank < numprocs ;source_rank++){
-			MPI_Recv(&message, BUFSIZE, MPI_CHAR, source_rank, tag, MPI_COMM_WORLD, &mpi_status);
+			MPI_Recv(&message, BUFSIZE, MPI_CHAR, MPI_ANY_SOURCE, tag, MPI_COMM_WORLD, &mpi_status);
 			printf("%s", message);
 		}
 	}
