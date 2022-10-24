@@ -22,8 +22,8 @@ int main(int argc, char *argv[])
 	if (rank == 0){
 		//printf("Process %d on %s out of %d\n", rank, processor_name,
 		//	numprocs);
-
-		for (int source_rank = 1; source_rank < numprocs ;source_rank++){
+		for (int rank_count = 0; rank_count < numprocs ;rank_count++)
+		{
 			MPI_Recv(&message, BUFSIZE, MPI_CHAR, MPI_ANY_SOURCE, tag, MPI_COMM_WORLD, &mpi_status);
 			printf("%s", message);
 		}
