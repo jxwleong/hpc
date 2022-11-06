@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "*.vs": "systemverilog",
+        "random": "c",
+        "limits": "c",
+        "system_error": "c",
+        "array": "c",
+        "deque": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "vector": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "type_traits": "c"
+    }
+}

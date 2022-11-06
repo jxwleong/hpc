@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 	MPI_Get_processor_name(processor_name, &namelen);
 	/*
-	printf("Process %d on %s out of %d\n", rank, processor_name,
+	printf("Process %d on %s out of %d\n", rank, processor_name,lab1_hello_world/hello.c
 			numprocs);
 	*/
 	if (rank == 0){
