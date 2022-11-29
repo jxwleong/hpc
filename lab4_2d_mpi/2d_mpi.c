@@ -6,6 +6,7 @@
 #include <mpi.h>
 
 // Example: https://www.eecg.utoronto.ca/~amza/ece1747h/homeworks/examples/MPI/other-examples/pipeline.c
+// http://homepages.math.uic.edu/~jan/mcs572/pipelines.pdf
 #define MAXPIXEL 256
 #define TEMPFILE "temp.pgm"
 
@@ -22,7 +23,8 @@ int f(int x, int y)
 int main(int argc, char*argv[])
 { 
     int x, y;
-    int ysplit_per_procs, ysize_for_each_proc;
+    int start, end;
+    int xsplit_per_procs, ysize_for_each_proc;
     int **picture;
     FILE *outfile;
 
@@ -39,23 +41,34 @@ int main(int argc, char*argv[])
         scanf("%d %d", &xsize, &ysize);
         picture =(int**)malloc(sizeof(int*)*ysize);
     }
-
-    ysplit_per_procs = ysize/numprocs;
-
     MPI_Bcast(&xsize, 1, MPI_INT, 0, MPI_COMM_WORLD);
     MPI_Bcast(&ysize, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
-    ysize_for_each_proc = (rank*ysplit_per_procs) + ysplit_per_procs;
-    for (y=0; y<ysize_for_each_proc; y++)
+    xsplit_per_procs = xsize/numprocs;
+    // x start from 1 ends with xsize
+    // Assume xsize, ysize=100
+    // For process0
+    // start=1
+    // end=xsplit_per_proc=25
+    start = (xsplit_per_procs*rank) + 1;
+    end = (xsplit_per_procs*rank) + xsplit_per_procs;
+    
+    //printf('Y: %d\n', end);
+    for (y=0; y<ysize; y++)
     { 
-        picture[y] = (int*)malloc(sizeof(int)*xsize);
-        for (x=0; x<xsize; x++)
-            picture[y][x] = f(x,y);
+        printf("\n\n\nRANK: %d\n", rank);
+
+        for (x=start; x<=end; x++)
+        {
+            printf("%d\n", x);
+        }
+        //printf("%d\n", xsplit_per_procs);
     }
 
-
+   
     MPI_Barrier(MPI_COMM_WORLD); // Wait for all process
-    if (!rank){
+    MPI_Finalize();  
+    /*(if (!rank){
         outfile=fopen(TEMPFILE,"w");
         fprintf(outfile,"P2\n%d %d %d\n",xsize, ysize, MAXPIXEL);
         for(y=0; y<ysize; y++)
@@ -63,5 +76,5 @@ int main(int argc, char*argv[])
         fprintf(outfile,"%d\n", picture[y][x]);
         fclose(outfile);
         system("display "TEMPFILE);
-    }
+    }*/
 }
