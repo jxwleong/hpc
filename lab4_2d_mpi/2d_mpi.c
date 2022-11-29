@@ -48,27 +48,27 @@ int main(int argc, char*argv[])
     // x start from 1 ends with xsize
     // Assume xsize, ysize=100
     // For process0
-    // start=1
-    // end=xsplit_per_proc=25
-    start = (xsplit_per_procs*rank) + 1;
-    end = (xsplit_per_procs*rank) + xsplit_per_procs;
-    
+    // start=0
+    // end=xsplit_per_proc=24
+    start = (xsplit_per_procs*rank);
+    end = (xsplit_per_procs*rank) + xsplit_per_procs -1;
+
     //printf('Y: %d\n', end);
     for (y=0; y<ysize; y++)
     { 
-        printf("\n\n\nRANK: %d\n", rank);
-
+        //printf("\n\n\nRANK: %d\n", rank);
+        picture[y] = (int*)malloc(sizeof(int)*xsize);
         for (x=start; x<=end; x++)
         {
-            printf("%d\n", x);
+            //printf("%d\n", x);
+            picture[y][x] = f(x,y);
         }
         //printf("%d\n", xsplit_per_procs);
     }
 
    
     MPI_Barrier(MPI_COMM_WORLD); // Wait for all process
-    MPI_Finalize();  
-    /*(if (!rank){
+    if (!rank){
         outfile=fopen(TEMPFILE,"w");
         fprintf(outfile,"P2\n%d %d %d\n",xsize, ysize, MAXPIXEL);
         for(y=0; y<ysize; y++)
@@ -76,5 +76,6 @@ int main(int argc, char*argv[])
         fprintf(outfile,"%d\n", picture[y][x]);
         fclose(outfile);
         system("display "TEMPFILE);
-    }*/
+    }
+    MPI_Finalize();  
 }
