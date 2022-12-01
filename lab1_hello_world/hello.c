@@ -22,10 +22,12 @@ int main(int argc, char *argv[])
 	if (rank == 0){
 		//printf("Process %d on %s out of %d\n", rank, processor_name,
 		//	numprocs);
-		for (int rank_count = 0; rank_count < numprocs ;rank_count++)
+		// numproces -1, to offset rank0, else will keep waiting for rank0 receive
+		for (int rank_count = 0; rank_count < numprocs-1 ;rank_count++)
 		{
 			MPI_Recv(&message, BUFSIZE, MPI_CHAR, MPI_ANY_SOURCE, tag, MPI_COMM_WORLD, &mpi_status);
 			printf("%s", message);
+
 		}
 	}
 	else{
