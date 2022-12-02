@@ -1,0 +1,595 @@
+
+2d_mpi:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000001000 <_init>:
+    1000:	f3 0f 1e fa          	endbr64 
+    1004:	48 83 ec 08          	sub    rsp,0x8
+    1008:	48 8b 05 c9 2f 00 00 	mov    rax,QWORD PTR [rip+0x2fc9]        # 3fd8 <__gmon_start__>
+    100f:	48 85 c0             	test   rax,rax
+    1012:	74 02                	je     1016 <_init+0x16>
+    1014:	ff d0                	call   rax
+    1016:	48 83 c4 08          	add    rsp,0x8
+    101a:	c3                   	ret    
+
+Disassembly of section .plt:
+
+0000000000001020 <.plt>:
+    1020:	ff 35 2a 2f 00 00    	push   QWORD PTR [rip+0x2f2a]        # 3f50 <_GLOBAL_OFFSET_TABLE_+0x8>
+    1026:	f2 ff 25 2b 2f 00 00 	bnd jmp QWORD PTR [rip+0x2f2b]        # 3f58 <_GLOBAL_OFFSET_TABLE_+0x10>
+    102d:	0f 1f 00             	nop    DWORD PTR [rax]
+    1030:	f3 0f 1e fa          	endbr64 
+    1034:	68 00 00 00 00       	push   0x0
+    1039:	f2 e9 e1 ff ff ff    	bnd jmp 1020 <.plt>
+    103f:	90                   	nop
+    1040:	f3 0f 1e fa          	endbr64 
+    1044:	68 01 00 00 00       	push   0x1
+    1049:	f2 e9 d1 ff ff ff    	bnd jmp 1020 <.plt>
+    104f:	90                   	nop
+    1050:	f3 0f 1e fa          	endbr64 
+    1054:	68 02 00 00 00       	push   0x2
+    1059:	f2 e9 c1 ff ff ff    	bnd jmp 1020 <.plt>
+    105f:	90                   	nop
+    1060:	f3 0f 1e fa          	endbr64 
+    1064:	68 03 00 00 00       	push   0x3
+    1069:	f2 e9 b1 ff ff ff    	bnd jmp 1020 <.plt>
+    106f:	90                   	nop
+    1070:	f3 0f 1e fa          	endbr64 
+    1074:	68 04 00 00 00       	push   0x4
+    1079:	f2 e9 a1 ff ff ff    	bnd jmp 1020 <.plt>
+    107f:	90                   	nop
+    1080:	f3 0f 1e fa          	endbr64 
+    1084:	68 05 00 00 00       	push   0x5
+    1089:	f2 e9 91 ff ff ff    	bnd jmp 1020 <.plt>
+    108f:	90                   	nop
+    1090:	f3 0f 1e fa          	endbr64 
+    1094:	68 06 00 00 00       	push   0x6
+    1099:	f2 e9 81 ff ff ff    	bnd jmp 1020 <.plt>
+    109f:	90                   	nop
+    10a0:	f3 0f 1e fa          	endbr64 
+    10a4:	68 07 00 00 00       	push   0x7
+    10a9:	f2 e9 71 ff ff ff    	bnd jmp 1020 <.plt>
+    10af:	90                   	nop
+    10b0:	f3 0f 1e fa          	endbr64 
+    10b4:	68 08 00 00 00       	push   0x8
+    10b9:	f2 e9 61 ff ff ff    	bnd jmp 1020 <.plt>
+    10bf:	90                   	nop
+    10c0:	f3 0f 1e fa          	endbr64 
+    10c4:	68 09 00 00 00       	push   0x9
+    10c9:	f2 e9 51 ff ff ff    	bnd jmp 1020 <.plt>
+    10cf:	90                   	nop
+    10d0:	f3 0f 1e fa          	endbr64 
+    10d4:	68 0a 00 00 00       	push   0xa
+    10d9:	f2 e9 41 ff ff ff    	bnd jmp 1020 <.plt>
+    10df:	90                   	nop
+    10e0:	f3 0f 1e fa          	endbr64 
+    10e4:	68 0b 00 00 00       	push   0xb
+    10e9:	f2 e9 31 ff ff ff    	bnd jmp 1020 <.plt>
+    10ef:	90                   	nop
+    10f0:	f3 0f 1e fa          	endbr64 
+    10f4:	68 0c 00 00 00       	push   0xc
+    10f9:	f2 e9 21 ff ff ff    	bnd jmp 1020 <.plt>
+    10ff:	90                   	nop
+    1100:	f3 0f 1e fa          	endbr64 
+    1104:	68 0d 00 00 00       	push   0xd
+    1109:	f2 e9 11 ff ff ff    	bnd jmp 1020 <.plt>
+    110f:	90                   	nop
+    1110:	f3 0f 1e fa          	endbr64 
+    1114:	68 0e 00 00 00       	push   0xe
+    1119:	f2 e9 01 ff ff ff    	bnd jmp 1020 <.plt>
+    111f:	90                   	nop
+
+Disassembly of section .plt.got:
+
+0000000000001120 <__cxa_finalize@plt>:
+    1120:	f3 0f 1e fa          	endbr64 
+    1124:	f2 ff 25 cd 2e 00 00 	bnd jmp QWORD PTR [rip+0x2ecd]        # 3ff8 <__cxa_finalize@GLIBC_2.2.5>
+    112b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+Disassembly of section .plt.sec:
+
+0000000000001130 <MPI_Barrier@plt>:
+    1130:	f3 0f 1e fa          	endbr64 
+    1134:	f2 ff 25 25 2e 00 00 	bnd jmp QWORD PTR [rip+0x2e25]        # 3f60 <MPI_Barrier>
+    113b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+0000000000001140 <printf@plt>:
+    1140:	f3 0f 1e fa          	endbr64 
+    1144:	f2 ff 25 1d 2e 00 00 	bnd jmp QWORD PTR [rip+0x2e1d]        # 3f68 <printf@GLIBC_2.2.5>
+    114b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+0000000000001150 <putchar@plt>:
+    1150:	f3 0f 1e fa          	endbr64 
+    1154:	f2 ff 25 15 2e 00 00 	bnd jmp QWORD PTR [rip+0x2e15]        # 3f70 <putchar@GLIBC_2.2.5>
+    115b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+0000000000001160 <malloc@plt>:
+    1160:	f3 0f 1e fa          	endbr64 
+    1164:	f2 ff 25 0d 2e 00 00 	bnd jmp QWORD PTR [rip+0x2e0d]        # 3f78 <malloc@GLIBC_2.2.5>
+    116b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+0000000000001170 <MPI_Init@plt>:
+    1170:	f3 0f 1e fa          	endbr64 
+    1174:	f2 ff 25 05 2e 00 00 	bnd jmp QWORD PTR [rip+0x2e05]        # 3f80 <MPI_Init>
+    117b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+0000000000001180 <cos@plt>:
+    1180:	f3 0f 1e fa          	endbr64 
+    1184:	f2 ff 25 fd 2d 00 00 	bnd jmp QWORD PTR [rip+0x2dfd]        # 3f88 <cos@GLIBC_2.2.5>
+    118b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+0000000000001190 <MPI_Get_processor_name@plt>:
+    1190:	f3 0f 1e fa          	endbr64 
+    1194:	f2 ff 25 f5 2d 00 00 	bnd jmp QWORD PTR [rip+0x2df5]        # 3f90 <MPI_Get_processor_name>
+    119b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+00000000000011a0 <MPI_Comm_size@plt>:
+    11a0:	f3 0f 1e fa          	endbr64 
+    11a4:	f2 ff 25 ed 2d 00 00 	bnd jmp QWORD PTR [rip+0x2ded]        # 3f98 <MPI_Comm_size>
+    11ab:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+00000000000011b0 <MPI_Comm_rank@plt>:
+    11b0:	f3 0f 1e fa          	endbr64 
+    11b4:	f2 ff 25 e5 2d 00 00 	bnd jmp QWORD PTR [rip+0x2de5]        # 3fa0 <MPI_Comm_rank>
+    11bb:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+00000000000011c0 <MPI_Bcast@plt>:
+    11c0:	f3 0f 1e fa          	endbr64 
+    11c4:	f2 ff 25 dd 2d 00 00 	bnd jmp QWORD PTR [rip+0x2ddd]        # 3fa8 <MPI_Bcast>
+    11cb:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+00000000000011d0 <__stack_chk_fail@plt>:
+    11d0:	f3 0f 1e fa          	endbr64 
+    11d4:	f2 ff 25 d5 2d 00 00 	bnd jmp QWORD PTR [rip+0x2dd5]        # 3fb0 <__stack_chk_fail@GLIBC_2.4>
+    11db:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+00000000000011e0 <MPI_Finalize@plt>:
+    11e0:	f3 0f 1e fa          	endbr64 
+    11e4:	f2 ff 25 cd 2d 00 00 	bnd jmp QWORD PTR [rip+0x2dcd]        # 3fb8 <MPI_Finalize>
+    11eb:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+00000000000011f0 <__isoc99_scanf@plt>:
+    11f0:	f3 0f 1e fa          	endbr64 
+    11f4:	f2 ff 25 c5 2d 00 00 	bnd jmp QWORD PTR [rip+0x2dc5]        # 3fc0 <__isoc99_scanf@GLIBC_2.7>
+    11fb:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+0000000000001200 <sin@plt>:
+    1200:	f3 0f 1e fa          	endbr64 
+    1204:	f2 ff 25 bd 2d 00 00 	bnd jmp QWORD PTR [rip+0x2dbd]        # 3fc8 <sin@GLIBC_2.2.5>
+    120b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+0000000000001210 <fflush@plt>:
+    1210:	f3 0f 1e fa          	endbr64 
+    1214:	f2 ff 25 b5 2d 00 00 	bnd jmp QWORD PTR [rip+0x2db5]        # 3fd0 <fflush@GLIBC_2.2.5>
+    121b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+Disassembly of section .text:
+
+0000000000001220 <_start>:
+    1220:	f3 0f 1e fa          	endbr64 
+    1224:	31 ed                	xor    ebp,ebp
+    1226:	49 89 d1             	mov    r9,rdx
+    1229:	5e                   	pop    rsi
+    122a:	48 89 e2             	mov    rdx,rsp
+    122d:	48 83 e4 f0          	and    rsp,0xfffffffffffffff0
+    1231:	50                   	push   rax
+    1232:	54                   	push   rsp
+    1233:	4c 8d 05 46 05 00 00 	lea    r8,[rip+0x546]        # 1780 <__libc_csu_fini>
+    123a:	48 8d 0d cf 04 00 00 	lea    rcx,[rip+0x4cf]        # 1710 <__libc_csu_init>
+    1241:	48 8d 3d 60 01 00 00 	lea    rdi,[rip+0x160]        # 13a8 <main>
+    1248:	ff 15 92 2d 00 00    	call   QWORD PTR [rip+0x2d92]        # 3fe0 <__libc_start_main@GLIBC_2.2.5>
+    124e:	f4                   	hlt    
+    124f:	90                   	nop
+
+0000000000001250 <deregister_tm_clones>:
+    1250:	48 8d 3d b9 2d 00 00 	lea    rdi,[rip+0x2db9]        # 4010 <__TMC_END__>
+    1257:	48 8d 05 b2 2d 00 00 	lea    rax,[rip+0x2db2]        # 4010 <__TMC_END__>
+    125e:	48 39 f8             	cmp    rax,rdi
+    1261:	74 15                	je     1278 <deregister_tm_clones+0x28>
+    1263:	48 8b 05 7e 2d 00 00 	mov    rax,QWORD PTR [rip+0x2d7e]        # 3fe8 <_ITM_deregisterTMCloneTable>
+    126a:	48 85 c0             	test   rax,rax
+    126d:	74 09                	je     1278 <deregister_tm_clones+0x28>
+    126f:	ff e0                	jmp    rax
+    1271:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+    1278:	c3                   	ret    
+    1279:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+
+0000000000001280 <register_tm_clones>:
+    1280:	48 8d 3d 89 2d 00 00 	lea    rdi,[rip+0x2d89]        # 4010 <__TMC_END__>
+    1287:	48 8d 35 82 2d 00 00 	lea    rsi,[rip+0x2d82]        # 4010 <__TMC_END__>
+    128e:	48 29 fe             	sub    rsi,rdi
+    1291:	48 89 f0             	mov    rax,rsi
+    1294:	48 c1 ee 3f          	shr    rsi,0x3f
+    1298:	48 c1 f8 03          	sar    rax,0x3
+    129c:	48 01 c6             	add    rsi,rax
+    129f:	48 d1 fe             	sar    rsi,1
+    12a2:	74 14                	je     12b8 <register_tm_clones+0x38>
+    12a4:	48 8b 05 45 2d 00 00 	mov    rax,QWORD PTR [rip+0x2d45]        # 3ff0 <_ITM_registerTMCloneTable>
+    12ab:	48 85 c0             	test   rax,rax
+    12ae:	74 08                	je     12b8 <register_tm_clones+0x38>
+    12b0:	ff e0                	jmp    rax
+    12b2:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+    12b8:	c3                   	ret    
+    12b9:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+
+00000000000012c0 <__do_global_dtors_aux>:
+    12c0:	f3 0f 1e fa          	endbr64 
+    12c4:	80 3d 5d 31 00 00 00 	cmp    BYTE PTR [rip+0x315d],0x0        # 4428 <completed.8061>
+    12cb:	75 2b                	jne    12f8 <__do_global_dtors_aux+0x38>
+    12cd:	55                   	push   rbp
+    12ce:	48 83 3d 22 2d 00 00 	cmp    QWORD PTR [rip+0x2d22],0x0        # 3ff8 <__cxa_finalize@GLIBC_2.2.5>
+    12d5:	00 
+    12d6:	48 89 e5             	mov    rbp,rsp
+    12d9:	74 0c                	je     12e7 <__do_global_dtors_aux+0x27>
+    12db:	48 8b 3d 26 2d 00 00 	mov    rdi,QWORD PTR [rip+0x2d26]        # 4008 <__dso_handle>
+    12e2:	e8 39 fe ff ff       	call   1120 <__cxa_finalize@plt>
+    12e7:	e8 64 ff ff ff       	call   1250 <deregister_tm_clones>
+    12ec:	c6 05 35 31 00 00 01 	mov    BYTE PTR [rip+0x3135],0x1        # 4428 <completed.8061>
+    12f3:	5d                   	pop    rbp
+    12f4:	c3                   	ret    
+    12f5:	0f 1f 00             	nop    DWORD PTR [rax]
+    12f8:	c3                   	ret    
+    12f9:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+
+0000000000001300 <frame_dummy>:
+    1300:	f3 0f 1e fa          	endbr64 
+    1304:	e9 77 ff ff ff       	jmp    1280 <register_tm_clones>
+
+0000000000001309 <f>:
+typedef enum{false, true} bool;
+
+int xsize, ysize;
+
+int f(int x, int y)
+{ 
+    1309:	f3 0f 1e fa          	endbr64 
+    130d:	55                   	push   rbp
+    130e:	48 89 e5             	mov    rbp,rsp
+    1311:	48 83 ec 30          	sub    rsp,0x30
+    1315:	89 7d dc             	mov    DWORD PTR [rbp-0x24],edi
+    1318:	89 75 d8             	mov    DWORD PTR [rbp-0x28],esi
+    double divisor = (M_PI*xsize/60);
+    131b:	8b 05 0b 31 00 00    	mov    eax,DWORD PTR [rip+0x310b]        # 442c <xsize>
+    1321:	f2 0f 2a c8          	cvtsi2sd xmm1,eax
+    1325:	f2 0f 10 05 2b 0d 00 	movsd  xmm0,QWORD PTR [rip+0xd2b]        # 2058 <_IO_stdin_used+0x58>
+    132c:	00 
+    132d:	f2 0f 59 c1          	mulsd  xmm0,xmm1
+    1331:	f2 0f 10 0d 27 0d 00 	movsd  xmm1,QWORD PTR [rip+0xd27]        # 2060 <_IO_stdin_used+0x60>
+    1338:	00 
+    1339:	f2 0f 5e c1          	divsd  xmm0,xmm1
+    133d:	f2 0f 11 45 e8       	movsd  QWORD PTR [rbp-0x18],xmm0
+    double zx = (double)x/divisor;
+    1342:	f2 0f 2a 45 dc       	cvtsi2sd xmm0,DWORD PTR [rbp-0x24]
+    1347:	f2 0f 5e 45 e8       	divsd  xmm0,QWORD PTR [rbp-0x18]
+    134c:	f2 0f 11 45 f0       	movsd  QWORD PTR [rbp-0x10],xmm0
+    double zy = (double)y/divisor;
+    1351:	f2 0f 2a 45 d8       	cvtsi2sd xmm0,DWORD PTR [rbp-0x28]
+    1356:	f2 0f 5e 45 e8       	divsd  xmm0,QWORD PTR [rbp-0x18]
+    135b:	f2 0f 11 45 f8       	movsd  QWORD PTR [rbp-0x8],xmm0
+    return (sin(zx)+cos(zy))*(MAXPIXEL/4)+(MAXPIXEL/2);
+    1360:	48 8b 45 f0          	mov    rax,QWORD PTR [rbp-0x10]
+    1364:	66 48 0f 6e c0       	movq   xmm0,rax
+    1369:	e8 92 fe ff ff       	call   1200 <sin@plt>
+    136e:	f2 0f 11 45 d0       	movsd  QWORD PTR [rbp-0x30],xmm0
+    1373:	48 8b 45 f8          	mov    rax,QWORD PTR [rbp-0x8]
+    1377:	66 48 0f 6e c0       	movq   xmm0,rax
+    137c:	e8 ff fd ff ff       	call   1180 <cos@plt>
+    1381:	f2 0f 10 4d d0       	movsd  xmm1,QWORD PTR [rbp-0x30]
+    1386:	f2 0f 58 c8          	addsd  xmm1,xmm0
+    138a:	f2 0f 10 05 d6 0c 00 	movsd  xmm0,QWORD PTR [rip+0xcd6]        # 2068 <_IO_stdin_used+0x68>
+    1391:	00 
+    1392:	f2 0f 59 c8          	mulsd  xmm1,xmm0
+    1396:	f2 0f 10 05 d2 0c 00 	movsd  xmm0,QWORD PTR [rip+0xcd2]        # 2070 <_IO_stdin_used+0x70>
+    139d:	00 
+    139e:	f2 0f 58 c1          	addsd  xmm0,xmm1
+    13a2:	f2 0f 2c c0          	cvttsd2si eax,xmm0
+}
+    13a6:	c9                   	leave  
+    13a7:	c3                   	ret    
+
+00000000000013a8 <main>:
+
+int main(int argc, char*argv[])
+{ 
+    13a8:	f3 0f 1e fa          	endbr64 
+    13ac:	55                   	push   rbp
+    13ad:	48 89 e5             	mov    rbp,rsp
+    13b0:	53                   	push   rbx
+    13b1:	48 81 ec 68 01 00 00 	sub    rsp,0x168
+    13b8:	89 bd 9c fe ff ff    	mov    DWORD PTR [rbp-0x164],edi
+    13be:	48 89 b5 90 fe ff ff 	mov    QWORD PTR [rbp-0x170],rsi
+    13c5:	64 48 8b 04 25 28 00 	mov    rax,QWORD PTR fs:0x28
+    13cc:	00 00 
+    13ce:	48 89 45 e8          	mov    QWORD PTR [rbp-0x18],rax
+    13d2:	31 c0                	xor    eax,eax
+    int x, y;
+    int modulus;
+    bool input_not_divisible=false;
+    13d4:	c7 85 b8 fe ff ff 00 	mov    DWORD PTR [rbp-0x148],0x0
+    13db:	00 00 00 
+    int start, end;
+    int xsplit_per_procs, ysize_for_each_proc;
+    int rank_to_cleanup = 0;
+    13de:	c7 85 bc fe ff ff 00 	mov    DWORD PTR [rbp-0x144],0x0
+    13e5:	00 00 00 
+    int **picture;
+    FILE *outfile;
+
+    int numprocs, rank, namelen, dest=0, tag=0, source;
+    13e8:	c7 85 c0 fe ff ff 00 	mov    DWORD PTR [rbp-0x140],0x0
+    13ef:	00 00 00 
+    13f2:	c7 85 c4 fe ff ff 00 	mov    DWORD PTR [rbp-0x13c],0x0
+    13f9:	00 00 00 
+    char processor_name[MPI_MAX_PROCESSOR_NAME];
+    MPI_Init(&argc, &argv);
+    13fc:	48 8d 95 90 fe ff ff 	lea    rdx,[rbp-0x170]
+    1403:	48 8d 85 9c fe ff ff 	lea    rax,[rbp-0x164]
+    140a:	48 89 d6             	mov    rsi,rdx
+    140d:	48 89 c7             	mov    rdi,rax
+    1410:	e8 5b fd ff ff       	call   1170 <MPI_Init@plt>
+	MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
+    1415:	48 8d 85 a4 fe ff ff 	lea    rax,[rbp-0x15c]
+    141c:	48 89 c6             	mov    rsi,rax
+    141f:	48 8d 3d fa 2d 00 00 	lea    rdi,[rip+0x2dfa]        # 4220 <ompi_mpi_comm_world>
+    1426:	e8 75 fd ff ff       	call   11a0 <MPI_Comm_size@plt>
+	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    142b:	48 8d 85 a8 fe ff ff 	lea    rax,[rbp-0x158]
+    1432:	48 89 c6             	mov    rsi,rax
+    1435:	48 8d 3d e4 2d 00 00 	lea    rdi,[rip+0x2de4]        # 4220 <ompi_mpi_comm_world>
+    143c:	e8 6f fd ff ff       	call   11b0 <MPI_Comm_rank@plt>
+	MPI_Get_processor_name(processor_name, &namelen);
+    1441:	48 8d 95 ac fe ff ff 	lea    rdx,[rbp-0x154]
+    1448:	48 8d 85 e0 fe ff ff 	lea    rax,[rbp-0x120]
+    144f:	48 89 d6             	mov    rsi,rdx
+    1452:	48 89 c7             	mov    rdi,rax
+    1455:	e8 36 fd ff ff       	call   1190 <MPI_Get_processor_name@plt>
+
+
+    if (!rank) {
+    145a:	8b 85 a8 fe ff ff    	mov    eax,DWORD PTR [rbp-0x158]
+    1460:	85 c0                	test   eax,eax
+    1462:	0f 85 82 00 00 00    	jne    14ea <main+0x142>
+        printf("How wide and tall should the picture be? ");fflush(stdout);
+    1468:	48 8d 3d 99 0b 00 00 	lea    rdi,[rip+0xb99]        # 2008 <_IO_stdin_used+0x8>
+    146f:	b8 00 00 00 00       	mov    eax,0x0
+    1474:	e8 c7 fc ff ff       	call   1140 <printf@plt>
+    1479:	48 8b 05 a0 2f 00 00 	mov    rax,QWORD PTR [rip+0x2fa0]        # 4420 <stdout@@GLIBC_2.2.5>
+    1480:	48 89 c7             	mov    rdi,rax
+    1483:	e8 88 fd ff ff       	call   1210 <fflush@plt>
+        scanf("%d %d", &xsize, &ysize);
+    1488:	48 8d 15 a1 2f 00 00 	lea    rdx,[rip+0x2fa1]        # 4430 <ysize>
+    148f:	48 8d 35 96 2f 00 00 	lea    rsi,[rip+0x2f96]        # 442c <xsize>
+    1496:	48 8d 3d 95 0b 00 00 	lea    rdi,[rip+0xb95]        # 2032 <_IO_stdin_used+0x32>
+    149d:	b8 00 00 00 00       	mov    eax,0x0
+    14a2:	e8 49 fd ff ff       	call   11f0 <__isoc99_scanf@plt>
+        picture = (int**)malloc(sizeof(int*)*ysize);
+    14a7:	8b 05 83 2f 00 00    	mov    eax,DWORD PTR [rip+0x2f83]        # 4430 <ysize>
+    14ad:	48 98                	cdqe   
+    14af:	48 c1 e0 03          	shl    rax,0x3
+    14b3:	48 89 c7             	mov    rdi,rax
+    14b6:	e8 a5 fc ff ff       	call   1160 <malloc@plt>
+    14bb:	48 89 85 d8 fe ff ff 	mov    QWORD PTR [rbp-0x128],rax
+        modulus = xsize/numprocs;
+    14c2:	8b 05 64 2f 00 00    	mov    eax,DWORD PTR [rip+0x2f64]        # 442c <xsize>
+    14c8:	8b 9d a4 fe ff ff    	mov    ebx,DWORD PTR [rbp-0x15c]
+    14ce:	99                   	cdq    
+    14cf:	f7 fb                	idiv   ebx
+    14d1:	89 85 c8 fe ff ff    	mov    DWORD PTR [rbp-0x138],eax
+        if (modulus != 0) {
+    14d7:	83 bd c8 fe ff ff 00 	cmp    DWORD PTR [rbp-0x138],0x0
+    14de:	74 0a                	je     14ea <main+0x142>
+            input_not_divisible = true;
+    14e0:	c7 85 b8 fe ff ff 01 	mov    DWORD PTR [rbp-0x148],0x1
+    14e7:	00 00 00 
+        }
+    }
+    MPI_Bcast(&xsize, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    14ea:	4c 8d 05 2f 2d 00 00 	lea    r8,[rip+0x2d2f]        # 4220 <ompi_mpi_comm_world>
+    14f1:	b9 00 00 00 00       	mov    ecx,0x0
+    14f6:	48 8d 15 23 2b 00 00 	lea    rdx,[rip+0x2b23]        # 4020 <ompi_mpi_int>
+    14fd:	be 01 00 00 00       	mov    esi,0x1
+    1502:	48 8d 3d 23 2f 00 00 	lea    rdi,[rip+0x2f23]        # 442c <xsize>
+    1509:	e8 b2 fc ff ff       	call   11c0 <MPI_Bcast@plt>
+    MPI_Bcast(&ysize, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    150e:	4c 8d 05 0b 2d 00 00 	lea    r8,[rip+0x2d0b]        # 4220 <ompi_mpi_comm_world>
+    1515:	b9 00 00 00 00       	mov    ecx,0x0
+    151a:	48 8d 15 ff 2a 00 00 	lea    rdx,[rip+0x2aff]        # 4020 <ompi_mpi_int>
+    1521:	be 01 00 00 00       	mov    esi,0x1
+    1526:	48 8d 3d 03 2f 00 00 	lea    rdi,[rip+0x2f03]        # 4430 <ysize>
+    152d:	e8 8e fc ff ff       	call   11c0 <MPI_Bcast@plt>
+
+    xsplit_per_procs = xsize/numprocs;
+    1532:	8b 05 f4 2e 00 00    	mov    eax,DWORD PTR [rip+0x2ef4]        # 442c <xsize>
+    1538:	8b 8d a4 fe ff ff    	mov    ecx,DWORD PTR [rbp-0x15c]
+    153e:	99                   	cdq    
+    153f:	f7 f9                	idiv   ecx
+    1541:	89 85 cc fe ff ff    	mov    DWORD PTR [rbp-0x134],eax
+    // x start from 1 ends with xsize
+    // Assume xsize, ysize=100
+    // For process0
+    // start=0
+    // end=xsplit_per_proc=24
+    start = (xsplit_per_procs*rank);
+    1547:	8b 85 a8 fe ff ff    	mov    eax,DWORD PTR [rbp-0x158]
+    154d:	8b 95 cc fe ff ff    	mov    edx,DWORD PTR [rbp-0x134]
+    1553:	0f af c2             	imul   eax,edx
+    1556:	89 85 d0 fe ff ff    	mov    DWORD PTR [rbp-0x130],eax
+    end = (xsplit_per_procs*rank) + xsplit_per_procs -1;
+    155c:	8b 85 a8 fe ff ff    	mov    eax,DWORD PTR [rbp-0x158]
+    1562:	0f af 85 cc fe ff ff 	imul   eax,DWORD PTR [rbp-0x134]
+    1569:	89 c2                	mov    edx,eax
+    156b:	8b 85 cc fe ff ff    	mov    eax,DWORD PTR [rbp-0x134]
+    1571:	01 d0                	add    eax,edx
+    1573:	83 e8 01             	sub    eax,0x1
+    1576:	89 85 d4 fe ff ff    	mov    DWORD PTR [rbp-0x12c],eax
+    printf("Rank: %d, start: %d end: %d\n", rank, start, end);
+    157c:	8b 85 a8 fe ff ff    	mov    eax,DWORD PTR [rbp-0x158]
+    1582:	8b 8d d4 fe ff ff    	mov    ecx,DWORD PTR [rbp-0x12c]
+    1588:	8b 95 d0 fe ff ff    	mov    edx,DWORD PTR [rbp-0x130]
+    158e:	89 c6                	mov    esi,eax
+    1590:	48 8d 3d a1 0a 00 00 	lea    rdi,[rip+0xaa1]        # 2038 <_IO_stdin_used+0x38>
+    1597:	b8 00 00 00 00       	mov    eax,0x0
+    159c:	e8 9f fb ff ff       	call   1140 <printf@plt>
+    for (y=0; y<ysize; y++)
+    15a1:	c7 85 b4 fe ff ff 00 	mov    DWORD PTR [rbp-0x14c],0x0
+    15a8:	00 00 00 
+    15ab:	e9 11 01 00 00       	jmp    16c1 <main+0x319>
+    { 
+        // picture[y] should only initiated once 
+        // else will have segmentation fualt (11)
+        if (picture[y] == NULL)
+    15b0:	8b 85 b4 fe ff ff    	mov    eax,DWORD PTR [rbp-0x14c]
+    15b6:	48 98                	cdqe   
+    15b8:	48 8d 14 c5 00 00 00 	lea    rdx,[rax*8+0x0]
+    15bf:	00 
+    15c0:	48 8b 85 d8 fe ff ff 	mov    rax,QWORD PTR [rbp-0x128]
+    15c7:	48 01 d0             	add    rax,rdx
+    15ca:	48 8b 00             	mov    rax,QWORD PTR [rax]
+    15cd:	48 85 c0             	test   rax,rax
+    15d0:	75 33                	jne    1605 <main+0x25d>
+            picture[y] = (int*)malloc(sizeof(int)*xsize);
+    15d2:	8b 05 54 2e 00 00    	mov    eax,DWORD PTR [rip+0x2e54]        # 442c <xsize>
+    15d8:	48 98                	cdqe   
+    15da:	48 c1 e0 02          	shl    rax,0x2
+    15de:	8b 95 b4 fe ff ff    	mov    edx,DWORD PTR [rbp-0x14c]
+    15e4:	48 63 d2             	movsxd rdx,edx
+    15e7:	48 8d 0c d5 00 00 00 	lea    rcx,[rdx*8+0x0]
+    15ee:	00 
+    15ef:	48 8b 95 d8 fe ff ff 	mov    rdx,QWORD PTR [rbp-0x128]
+    15f6:	48 8d 1c 11          	lea    rbx,[rcx+rdx*1]
+    15fa:	48 89 c7             	mov    rdi,rax
+    15fd:	e8 5e fb ff ff       	call   1160 <malloc@plt>
+    1602:	48 89 03             	mov    QWORD PTR [rbx],rax
+
+        for (x=start; x<=end; x++)
+    1605:	8b 85 d0 fe ff ff    	mov    eax,DWORD PTR [rbp-0x130]
+    160b:	89 85 b0 fe ff ff    	mov    DWORD PTR [rbp-0x150],eax
+    1611:	eb 11                	jmp    1624 <main+0x27c>
+            //picture[y][x] = f(x,y);
+            printf(" ");
+    1613:	bf 20 00 00 00       	mov    edi,0x20
+    1618:	e8 33 fb ff ff       	call   1150 <putchar@plt>
+        for (x=start; x<=end; x++)
+    161d:	83 85 b0 fe ff ff 01 	add    DWORD PTR [rbp-0x150],0x1
+    1624:	8b 85 b0 fe ff ff    	mov    eax,DWORD PTR [rbp-0x150]
+    162a:	3b 85 d4 fe ff ff    	cmp    eax,DWORD PTR [rbp-0x12c]
+    1630:	7e e1                	jle    1613 <main+0x26b>
+        // If the input is not divisible, will let rank0 to compute
+        // the leftover number
+        if (rank==rank_to_cleanup && input_not_divisible==true) {
+    1632:	8b 85 a8 fe ff ff    	mov    eax,DWORD PTR [rbp-0x158]
+    1638:	39 85 bc fe ff ff    	cmp    DWORD PTR [rbp-0x144],eax
+    163e:	75 7a                	jne    16ba <main+0x312>
+    1640:	83 bd b8 fe ff ff 01 	cmp    DWORD PTR [rbp-0x148],0x1
+    1647:	75 71                	jne    16ba <main+0x312>
+            for (x=numprocs*xsplit_per_procs; x<xsize; x++)
+    1649:	8b 85 a4 fe ff ff    	mov    eax,DWORD PTR [rbp-0x15c]
+    164f:	8b 95 cc fe ff ff    	mov    edx,DWORD PTR [rbp-0x134]
+    1655:	0f af c2             	imul   eax,edx
+    1658:	89 85 b0 fe ff ff    	mov    DWORD PTR [rbp-0x150],eax
+    165e:	eb 4c                	jmp    16ac <main+0x304>
+                picture[y][x] = f(x,y);
+    1660:	8b 85 b4 fe ff ff    	mov    eax,DWORD PTR [rbp-0x14c]
+    1666:	48 98                	cdqe   
+    1668:	48 8d 14 c5 00 00 00 	lea    rdx,[rax*8+0x0]
+    166f:	00 
+    1670:	48 8b 85 d8 fe ff ff 	mov    rax,QWORD PTR [rbp-0x128]
+    1677:	48 01 d0             	add    rax,rdx
+    167a:	48 8b 00             	mov    rax,QWORD PTR [rax]
+    167d:	8b 95 b0 fe ff ff    	mov    edx,DWORD PTR [rbp-0x150]
+    1683:	48 63 d2             	movsxd rdx,edx
+    1686:	48 c1 e2 02          	shl    rdx,0x2
+    168a:	48 8d 1c 10          	lea    rbx,[rax+rdx*1]
+    168e:	8b 95 b4 fe ff ff    	mov    edx,DWORD PTR [rbp-0x14c]
+    1694:	8b 85 b0 fe ff ff    	mov    eax,DWORD PTR [rbp-0x150]
+    169a:	89 d6                	mov    esi,edx
+    169c:	89 c7                	mov    edi,eax
+    169e:	e8 66 fc ff ff       	call   1309 <f>
+    16a3:	89 03                	mov    DWORD PTR [rbx],eax
+            for (x=numprocs*xsplit_per_procs; x<xsize; x++)
+    16a5:	83 85 b0 fe ff ff 01 	add    DWORD PTR [rbp-0x150],0x1
+    16ac:	8b 05 7a 2d 00 00    	mov    eax,DWORD PTR [rip+0x2d7a]        # 442c <xsize>
+    16b2:	39 85 b0 fe ff ff    	cmp    DWORD PTR [rbp-0x150],eax
+    16b8:	7c a6                	jl     1660 <main+0x2b8>
+    for (y=0; y<ysize; y++)
+    16ba:	83 85 b4 fe ff ff 01 	add    DWORD PTR [rbp-0x14c],0x1
+    16c1:	8b 05 69 2d 00 00    	mov    eax,DWORD PTR [rip+0x2d69]        # 4430 <ysize>
+    16c7:	39 85 b4 fe ff ff    	cmp    DWORD PTR [rbp-0x14c],eax
+    16cd:	0f 8c dd fe ff ff    	jl     15b0 <main+0x208>
+        }
+    }
+
+    MPI_Barrier(MPI_COMM_WORLD); // Wait for all process
+    16d3:	48 8d 3d 46 2b 00 00 	lea    rdi,[rip+0x2b46]        # 4220 <ompi_mpi_comm_world>
+    16da:	e8 51 fa ff ff       	call   1130 <MPI_Barrier@plt>
+        for (x=0; x<xsize; x++)
+        fprintf(outfile,"%d\n", picture[y][x]);
+        fclose(outfile);
+        system("display "TEMPFILE);
+    }*/
+    MPI_Finalize();  
+    16df:	e8 fc fa ff ff       	call   11e0 <MPI_Finalize@plt>
+    16e4:	b8 00 00 00 00       	mov    eax,0x0
+    16e9:	48 8b 5d e8          	mov    rbx,QWORD PTR [rbp-0x18]
+    16ed:	64 48 33 1c 25 28 00 	xor    rbx,QWORD PTR fs:0x28
+    16f4:	00 00 
+    16f6:	74 05                	je     16fd <main+0x355>
+    16f8:	e8 d3 fa ff ff       	call   11d0 <__stack_chk_fail@plt>
+    16fd:	48 81 c4 68 01 00 00 	add    rsp,0x168
+    1704:	5b                   	pop    rbx
+    1705:	5d                   	pop    rbp
+    1706:	c3                   	ret    
+    1707:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+    170e:	00 00 
+
+0000000000001710 <__libc_csu_init>:
+    1710:	f3 0f 1e fa          	endbr64 
+    1714:	41 57                	push   r15
+    1716:	4c 8d 3d 0b 26 00 00 	lea    r15,[rip+0x260b]        # 3d28 <__frame_dummy_init_array_entry>
+    171d:	41 56                	push   r14
+    171f:	49 89 d6             	mov    r14,rdx
+    1722:	41 55                	push   r13
+    1724:	49 89 f5             	mov    r13,rsi
+    1727:	41 54                	push   r12
+    1729:	41 89 fc             	mov    r12d,edi
+    172c:	55                   	push   rbp
+    172d:	48 8d 2d fc 25 00 00 	lea    rbp,[rip+0x25fc]        # 3d30 <__do_global_dtors_aux_fini_array_entry>
+    1734:	53                   	push   rbx
+    1735:	4c 29 fd             	sub    rbp,r15
+    1738:	48 83 ec 08          	sub    rsp,0x8
+    173c:	e8 bf f8 ff ff       	call   1000 <_init>
+    1741:	48 c1 fd 03          	sar    rbp,0x3
+    1745:	74 1f                	je     1766 <__libc_csu_init+0x56>
+    1747:	31 db                	xor    ebx,ebx
+    1749:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+    1750:	4c 89 f2             	mov    rdx,r14
+    1753:	4c 89 ee             	mov    rsi,r13
+    1756:	44 89 e7             	mov    edi,r12d
+    1759:	41 ff 14 df          	call   QWORD PTR [r15+rbx*8]
+    175d:	48 83 c3 01          	add    rbx,0x1
+    1761:	48 39 dd             	cmp    rbp,rbx
+    1764:	75 ea                	jne    1750 <__libc_csu_init+0x40>
+    1766:	48 83 c4 08          	add    rsp,0x8
+    176a:	5b                   	pop    rbx
+    176b:	5d                   	pop    rbp
+    176c:	41 5c                	pop    r12
+    176e:	41 5d                	pop    r13
+    1770:	41 5e                	pop    r14
+    1772:	41 5f                	pop    r15
+    1774:	c3                   	ret    
+    1775:	66 66 2e 0f 1f 84 00 	data16 nop WORD PTR cs:[rax+rax*1+0x0]
+    177c:	00 00 00 00 
+
+0000000000001780 <__libc_csu_fini>:
+    1780:	f3 0f 1e fa          	endbr64 
+    1784:	c3                   	ret    
+
+Disassembly of section .fini:
+
+0000000000001788 <_fini>:
+    1788:	f3 0f 1e fa          	endbr64 
+    178c:	48 83 ec 08          	sub    rsp,0x8
+    1790:	48 83 c4 08          	add    rsp,0x8
+    1794:	c3                   	ret    

@@ -4,7 +4,7 @@
 #include <math.h>
 
 #define MAXPIXEL 256
-#define TEMPFILE "temp.pgm"
+#define TEMPFILE "2d_serial.pgm"
 
 int xsize, ysize;
 
