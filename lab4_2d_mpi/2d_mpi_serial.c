@@ -27,7 +27,8 @@ int main(int argc, char*argv[])
     { 
         picture[y] = (int*)malloc(sizeof(int)*xsize);
         for (x=0; x<xsize; x++)
-            picture[y][x] = f(x,y);
+            
+            =
     }
     outfile=fopen(TEMPFILE,"w");
     fprintf(outfile,"P2\n%d %d %d\n",xsize, ysize, MAXPIXEL);
