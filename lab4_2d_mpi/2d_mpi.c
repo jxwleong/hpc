@@ -6,8 +6,6 @@
 #include <mpi.h>
 // Example: https://www.eecg.utoronto.ca/~amza/ece1747h/homeworks/examples/MPI/other-examples/pipeline.c
 // http://homepages.math.uic.edu/~jan/mcs572/pipelines.pdf
-// 2D Array double pointer example
-
 #define MAXPIXEL 256
 #define TEMPFILE "2d_mpi.pgm"
 
@@ -26,7 +24,6 @@ int f(int x, int y)
 int main(int argc, char*argv[])
 { 
     int x, y;
-    int i;
     int modulus;
     bool input_not_divisible=false;
     int start, end;
@@ -72,21 +69,8 @@ int main(int argc, char*argv[])
         // user input
         picture[y] = (int*)malloc(sizeof(int)*xsize);
         global_picture[y] = (int*)malloc(sizeof(int)*xsize);
-        // only rank0 result are shown
-        // explained: https://stackoverflow.com/a/40118832
-        // Need to use "i" to ensure that all the processes
-        // write at the same index for picture array
-        // else MPI_Gather result will only show rank 0 result
-        // as any rank > 0 will write the array out of scope. 
-        for (x=start; x<=end; x++){
-            picture[y][i] = f(x,y);
-            i++;
-        }
-        i=0;
-        if (y==0){
-            printf("Rank %d picture[y],y=%d,x=%d address=%p\n", rank, y, x,picture[y]);
-            printf("Rank %d global_picture[y],y=%d,x=%d address=%p\n", rank, y, x,global_picture[y]);
-        }
+        for (x=start; x<=end; x++)
+            picture[y][x] = f(x,y);
         // If the input is not divisible, will let rank0 to compute
         // the leftover number
         //if (rank==rank_to_cleanup && input_not_divisible==true){
@@ -94,15 +78,12 @@ int main(int argc, char*argv[])
         //        picture[y][x] = f(x,y);
         //}
         // MPI_Barrier(MPI_COMM_WORLD); // Wait for all processimage.png
-        // https://rookiehpc.github.io/mpi/docs/mpi_gather/index.html
-        //if (!rank)
         MPI_Gather(picture[y], xsplit_per_procs, MPI_INT, global_picture[y], xsplit_per_procs, MPI_INT, 0, MPI_COMM_WORLD);
-        //else  
-        //    MPI_Gather(picture[y], xsplit_per_procs, MPI_INT, NULL, xsplit_per_procs, MPI_INT, 0, MPI_COMM_WORLD);  
     }
   
 
     MPI_Barrier(MPI_COMM_WORLD); // Wait for all process
+    printf("WAIT!\n");
     
     if (!rank){
         outfile=fopen(TEMPFILE,"w");
