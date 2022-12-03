@@ -7,15 +7,13 @@
         "request": "launch",
         "program": "/usr/bin/mpirun",
         "args": [
-            "-np",
-            "4",
             "${fileDirname}/${fileBasenameNoExtension}"
         ],
         "stopAtEntry": true,
         "cwd": "${workspaceFolder}",
         //"environment":[{ "name": "TMPDIR", "value": "/tmp" }],
         "externalConsole": false,
-        //"MIMode": "lldb",
+        "MIMode": "gdb",
         "preLaunchTask": "mpicc build active file",
         "miDebuggerPath": "/usr/bin/gdb",
       },

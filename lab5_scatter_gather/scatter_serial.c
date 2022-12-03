@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
     }
     printf("\n");
     result = 0;
+    // summation of all data..
     for (i=0; i<size; i++)
         result += data[i];
     printf("Result: %d\n",result);
