@@ -72,6 +72,12 @@ int main(int argc, char*argv[])
         // user input
         picture[y] = (int*)malloc(sizeof(int)*xsize);
         global_picture[y] = (int*)malloc(sizeof(int)*xsize);
+        // only rank0 result are shown
+        // explained: https://stackoverflow.com/a/40118832
+        // Need to use "i" to ensure that all the processes
+        // write at the same index for picture array
+        // else MPI_Gather result will only show rank 0 result
+        // as any rank > 0 will write the array out of scope. 
         for (x=start; x<=end; x++){
             picture[y][i] = f(x,y);
             i++;
