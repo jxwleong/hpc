@@ -69,23 +69,28 @@ int main(int argc, char*argv[])
         // user input
         picture[y] = (int*)malloc(sizeof(int)*xsize);
         global_picture[y] = (int*)malloc(sizeof(int)*xsize);
-        for (x=start; x<=end; x++)
-            picture[y][x] = f(x,y);
-        // If the input is not divisible, will let rank0 to compute
-        // the leftover number
-        //if (rank==rank_to_cleanup && input_not_divisible==true){
-        //    for (x=numprocs*xsplit_per_procs; x<xsize; x++)
-        //        picture[y][x] = f(x,y);
-        //}
+        
+        // Need to use 'i', else it will write past the xsize
+        // and end result will only show the rank0 result
+        int i=0;
+        for (x=start; x<=end; x++){
+            picture[y][i] = f(x,y);
+            i++;
+        }
         // MPI_Barrier(MPI_COMM_WORLD); // Wait for all processimage.png
         MPI_Gather(picture[y], xsplit_per_procs, MPI_INT, global_picture[y], xsplit_per_procs, MPI_INT, 0, MPI_COMM_WORLD);
     }
   
 
     MPI_Barrier(MPI_COMM_WORLD); // Wait for all process
-    printf("WAIT!\n");
     
     if (!rank){
+        // If the input is not divisible, will let rank0 to compute
+        // the leftover number
+        if (input_not_divisible==true){
+            for (x=numprocs*xsplit_per_procs; x<xsize; x++)
+                picture[y][x] = f(x,y);
+        }
         outfile=fopen(TEMPFILE,"w");
         fprintf(outfile,"P2\n%d %d %d\n",xsize, ysize, MAXPIXEL);
         for(y=0; y<ysize; y++)

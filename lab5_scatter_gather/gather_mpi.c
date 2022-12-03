@@ -67,8 +67,6 @@ int main(int argc, char *argv[])
                 //printf("\n[AFTER][Modulus], int_buf[%d]=%ld", i, int_buf[i]);
             }
         }
-        int temp=1749;
-        //printf("\nINT_BUF[%d]=%ld\n", temp, int_buf[temp]);
         for (i=0; i<size; i++)
             fprintf(outfile,"%ld\n", int_buf[i]);
         fclose(outfile);
