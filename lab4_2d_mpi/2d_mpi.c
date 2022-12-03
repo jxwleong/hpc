@@ -88,8 +88,11 @@ int main(int argc, char*argv[])
         // If the input is not divisible, will let rank0 to compute
         // the leftover number
         if (input_not_divisible==true){
-            for (x=numprocs*xsplit_per_procs; x<xsize; x++)
-                picture[y][x] = f(x,y);
+            for (y=0; y<ysize; y++){
+                for (x=numprocs*xsplit_per_procs; x<xsize; x++){
+                    global_picture[y][x] = f(x,y);
+                }
+            }
         }
         outfile=fopen(TEMPFILE,"w");
         fprintf(outfile,"P2\n%d %d %d\n",xsize, ysize, MAXPIXEL);
