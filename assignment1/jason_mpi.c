@@ -163,6 +163,9 @@ int main(int argc, char *argv[]){
     end = (xsplit_per_procs*rank) + xsplit_per_procs -1;
     //fprintf(stderr,"%d A\n", rank);
     printf("Rank: %d, start: %d end: %d\n", rank, start, end);
+
+    // Use total size to do..
+    printf("Total Size: %d\n", size);
     int i=0;
 
     // idea
@@ -172,17 +175,19 @@ int main(int argc, char *argv[]){
     // after invert then gather them
     for(int y=0; y<image->y; y++){  
         //fprintf(stderr,"%d B\n", rank);
-        local_image = (unsigned char *)malloc(sizeof(unsigned char *) * sizeof(image->x) * 3);
+        local_image = (unsigned char *)malloc(sizeof(unsigned char *) * image->x * 3);
+        //printf("Size of local image malloc: %ld\n", (sizeof(unsigned char *) * image->x * 3));
         //fprintf(stderr,"%d B\n", rank);
         int i=0;
         for(int x=start; x<end * 3; x++){
             local_image[i] = 255 - image->data[x];
-            if (!rank)
-                printf("RANK[%d]: local_image[%d]=%u, global_image->data[%d]=%u\n", rank, i, local_image[i], x, image->data[x]);
+            //if (!rank)
+                //printf("RANK[%d][Y:%d]: local_image[%d]=%u, global_image->data[%d]=%u\n", rank, y, i, local_image[i], x, image->data[x]);
             i++;
         }
+        MPI_Gather(local_image, xsplit_per_procs, MPI_UNSIGNED_CHAR, image->data, xsplit_per_procs, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
     }
-    MPI_Gather(local_image, xsplit_per_procs, MPI_UNSIGNED_CHAR, image->data, xsplit_per_procs, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+   
 	if (!rank) {
         // Get the modulus after the split above,
         // if modulus !=0 , invert the leftover part
