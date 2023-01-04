@@ -1,0 +1,1 @@
+https://kontext.tech/article/978/install-hadoop-332-in-wsl-on-windows
